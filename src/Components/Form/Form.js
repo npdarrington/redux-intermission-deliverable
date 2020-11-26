@@ -47,4 +47,8 @@ const Form = props => {
 	);
 };
 
+const mapDispatchToProps = dispatch => ({
+	addIdea: idea => dispatch(addIdea(idea)),
+});
+
 export default Form;
