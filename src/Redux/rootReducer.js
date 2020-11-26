@@ -1,4 +1,4 @@
-import { combineReducers } from 'react-redux';
+import { combineReducers } from 'redux';
 import { ideas } from './Ideas/Ideas.reducer';
 
 const rootReducer = combineReducers({
