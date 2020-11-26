@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import Idea from '../Idea/Idea';
+
 import './IdeasContainer.css';
 
 const IdeasContainer = ({ ideas }) => {
@@ -8,7 +10,7 @@ const IdeasContainer = ({ ideas }) => {
 		<section className='ideas-container'>
 			{ideas.length < 1 && <h2>Add a new idea to your list!</h2>}
 			{ideas.map(idea => (
-				<h3>A new idea goes here!</h3>
+				<Idea key={idea.id} idea={idea} />
 			))}
 		</section>
 	);
