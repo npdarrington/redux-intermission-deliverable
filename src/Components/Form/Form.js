@@ -9,12 +9,14 @@ function Form() {
 		if (!title || !idea) {
 			setError('A title and idea must be filled in');
 		} else {
+			setError('');
 			// do successful submit here
 		}
 	};
 
 	return (
 		<section className='form'>
+			{error && <h2>{error}</h2>}
 			<label htmlFor='Title'>Title:</label>
 			<input
 				name='title'
