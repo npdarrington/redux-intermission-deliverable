@@ -1,7 +1,11 @@
+import React, { useState } from 'react';
+
+import Form from '../Form/Form';
+
 import './App.css';
 
 function App() {
-	return <main className='App'>App</main>;
+	return <main className='App'></main>;
 }
 
 export default App;
