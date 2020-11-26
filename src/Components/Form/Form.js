@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 
 function Form() {
+	const [title, setTitle] = useState('');
+	const [idea, setIdea] = useState('');
+
 	return (
 		<section className='form'>
 			<label htmlFor='Title'>Title:</label>
