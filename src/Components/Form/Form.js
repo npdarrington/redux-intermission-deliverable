@@ -11,10 +11,16 @@ const Form = props => {
 		if (!title || !idea) {
 			setError('A title and idea must be filled in');
 		} else {
-			setError('');
 			const newIdea = { title: title, idea: idea };
 			this.props.addIdea(newIdea);
+			resetInputs();
 		}
+	};
+
+	const resetInputs = () => {
+		setTitle('');
+		setIdea('');
+		setError('');
 	};
 
 	return (
@@ -40,4 +46,5 @@ const Form = props => {
 		</section>
 	);
 };
+
 export default Form;
