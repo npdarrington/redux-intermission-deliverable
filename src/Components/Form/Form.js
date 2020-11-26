@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { addIdea } from '../../Redux/Ideas/Ideas.actions';
+import { connect } from 'react-redux';
 
-function Form() {
+const Form = () => {
 	const [title, setTitle] = useState('');
 	const [idea, setIdea] = useState('');
 	const [error, setError] = useState('');
@@ -10,7 +12,6 @@ function Form() {
 			setError('A title and idea must be filled in');
 		} else {
 			setError('');
-			// do successful submit here
 		}
 	};
 
@@ -36,5 +37,5 @@ function Form() {
 			</button>
 		</section>
 	);
-}
+};
 export default Form;
