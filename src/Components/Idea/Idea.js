@@ -2,16 +2,16 @@ import React from 'react';
 
 import './Idea.css';
 
-const Idea = ({ id, title, idea }) => {
+const Idea = ({ idea: { id, title, idea } }) => {
 	return (
 		<article className='idea-card'>
 			<section className='idea-card-head'>
-				<h2>Delete</h2>
-				<h2>Favorite</h2>
+				<h5>Delete</h5>
+				<h5>Favorite</h5>
 			</section>
 			<section className='idea-card-body'>
-				<h2>Title goes here</h2>
-				<p>Body goes here</p>
+				<h2>{title}</h2>
+				<p>{idea}</p>
 			</section>
 		</article>
 	);
