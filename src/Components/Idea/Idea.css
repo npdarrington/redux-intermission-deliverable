@@ -11,7 +11,7 @@
 .idea-card .idea-card-head {
 	display: flex;
 	justify-content: space-between;
-	height: 30px;
+	height: 25px;
 }
 
 .idea-card-head img {
