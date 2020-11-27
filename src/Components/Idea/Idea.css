@@ -6,3 +6,14 @@
 	padding: 5px 10px;
 	border: 1px solid black;
 }
+
+.idea-card .idea-card-head {
+	display: flex;
+	justify-content: space-between;
+	height: 30px;
+}
+
+.idea-card-head img {
+	height: 100%;
+	width: auto;
+}
