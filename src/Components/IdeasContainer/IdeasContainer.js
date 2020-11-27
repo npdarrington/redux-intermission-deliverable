@@ -10,7 +10,12 @@ const IdeasContainer = ({ ideas }) => {
 		<section className='ideas-container'>
 			{ideas.length < 1 && <h2>Add a new idea to your list!</h2>}
 			{ideas.map(idea => (
-				<Idea key={idea.id} ideaId={idea.id} idea={idea.idea} />
+				<Idea
+					key={idea.id}
+					ideaId={idea.id}
+					idea={idea.idea}
+					favorited={idea.favorite}
+				/>
 			))}
 		</section>
 	);
