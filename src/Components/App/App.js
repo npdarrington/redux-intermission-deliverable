@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import Form from '../Form/Form';
 import IdeasContainer from '../IdeasContainer/IdeasContainer';
 
 import './App.css';
 
-function App() {
+const App = () => {
 	return (
 		<main className='App'>
 			<Form />
 			<IdeasContainer />
 		</main>
 	);
-}
+};
 
 export default App;
