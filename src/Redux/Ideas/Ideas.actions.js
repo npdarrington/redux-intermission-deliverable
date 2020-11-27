@@ -7,3 +7,8 @@ export const deleteIdea = id => ({
 	type: 'DELETE_IDEA',
 	id,
 });
+
+export const favoriteIdea = id => ({
+	type: 'FAVORITE_IDEA',
+	id,
+});
