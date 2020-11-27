@@ -1,0 +1,8 @@
+.idea-card {
+	display: flex;
+	flex-direction: column;
+	width: 275px;
+	height: auto;
+	padding: 5px 10px;
+	border: 1px solid black;
+}
