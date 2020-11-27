@@ -22,8 +22,6 @@ const Idea = ({ ideaId, idea, deleteIdea, favoriteIdea, favorited }) => {
 					alt={favorited ? `Unfavorite Idea` : `Favorite Idea`}
 					onClick={() => favoriteIdea(ideaId)}
 				/>
-				<h5 onClick={() => deleteIdea(ideaId)}>Delete</h5>
-				<h5 onClick={() => favoriteIdea(ideaId)}>Favorite</h5>
 			</section>
 			<section className='idea-card-body'>
 				<h2>{idea.title}</h2>
