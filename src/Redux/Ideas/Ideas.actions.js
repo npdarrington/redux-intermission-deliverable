@@ -3,7 +3,7 @@ export const addIdea = idea => ({
 	idea,
 });
 
-export const deleteIdea = idea => ({
+export const deleteIdea = id => ({
 	type: 'DELETE_IDEA',
-	idea,
+	id,
 });
