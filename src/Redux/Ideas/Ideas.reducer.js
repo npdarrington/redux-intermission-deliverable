@@ -7,7 +7,7 @@ export const ideas = (state = [], action) => {
 		case 'FAVORITE_IDEA':
 			const favoriteIdea = state.find(idea => idea.id === action.id);
 			favoriteIdea.favorite = !favoriteIdea.favorite;
-			return state;
+			return [...state];
 		default:
 			return state;
 	}
