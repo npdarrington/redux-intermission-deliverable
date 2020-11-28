@@ -27,6 +27,7 @@ const mockIdeas = [
 ];
 
 const store = createStore(rootReducer, { ideas: mockIdeas });
+const storeNoIdeas = createStore(rootReducer);
 
 describe('IdeasContainer', () => {
 	test('should render all ideas to the page', () => {
@@ -39,5 +40,16 @@ describe('IdeasContainer', () => {
 		expect(screen.getByText('Test Idea 1')).toBeInTheDocument();
 		expect(screen.getByText('Test Title 2')).toBeInTheDocument();
 		expect(screen.getByText('Test Idea 2')).toBeInTheDocument();
+	});
+
+	test('should render a custom message if no ideas are present', () => {
+		render(
+			<Provider store={storeNoIdeas}>
+				<IdeasContainer />
+			</Provider>
+		);
+		expect(
+			screen.getByText('Add a new idea to your list!')
+		).toBeInTheDocument();
 	});
 });
