@@ -57,4 +57,27 @@ describe('Idea', () => {
 		);
 		expect(screen.getByAltText('Favorite Idea')).toBeInTheDocument();
 	});
+
+	test('should render a favorite icon for favorited ideas', () => {
+		const mockIdea = {
+			id: 1,
+			idea: {
+				title: 'Test Title',
+				idea: 'Test Idea',
+			},
+			favorite: true,
+		};
+		render(
+			<Provider store={store}>
+				<Idea
+					ideaId={mockIdea.id}
+					idea={mockIdea.idea}
+					deleteIdea={jest.fn()}
+					favoriteIdea={jest.fn()}
+					favorited={mockIdea.favorite}
+				/>
+			</Provider>
+		);
+		expect(screen.getByAltText('Unfavorite Idea')).toBeInTheDocument();
+	});
 });
