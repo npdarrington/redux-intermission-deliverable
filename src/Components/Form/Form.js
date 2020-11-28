@@ -31,6 +31,7 @@ const Form = ({ addIdea }) => {
 				name='title'
 				value={title}
 				type='text'
+				placeholder='Add A Title'
 				onChange={event => setTitle(event.target.value)}
 			/>
 			<label htmlFor='Idea'>Idea:</label>
@@ -38,6 +39,7 @@ const Form = ({ addIdea }) => {
 				name='title'
 				value={idea}
 				type='text'
+				placeholder='Add Your Idea'
 				onChange={event => setIdea(event.target.value)}
 			/>
 			<button type='button' onClick={validateIdea}>
