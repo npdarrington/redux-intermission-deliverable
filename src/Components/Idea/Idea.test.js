@@ -32,6 +32,7 @@ describe('Idea', () => {
 		);
 		expect(screen.getByText('Test Title')).toBeInTheDocument();
 		expect(screen.getByText('Test Idea')).toBeInTheDocument();
+		expect(screen.getByAltText('Delete Idea')).toBeInTheDocument();
 	});
 
 	test('should render an unfavorited idea by default', () => {
