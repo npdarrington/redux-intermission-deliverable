@@ -24,4 +24,13 @@ describe('Form', () => {
 		expect(screen.getByPlaceholderText('Add Your Idea')).toBeInTheDocument();
 		expect(screen.getByRole('button', { name: 'Submit' })).toBeInTheDocument();
 	});
+
+	test('should all user to type inside inputs', () => {
+		const titleInput = screen.getByPlaceholderText('Add A Title');
+		const ideaInput = screen.getByPlaceholderText('Add Your Idea');
+		userEvent.type(titleInput, 'Test Title');
+		userEvent.type(ideaInput, 'Test Idea');
+		expect(titleInput.value).toBe('Test Title');
+		expect(ideaInput.value).toBe('Test Idea');
+	});
 });
