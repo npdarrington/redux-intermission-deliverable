@@ -20,6 +20,8 @@ describe('Form', () => {
 	});
 
 	test('should render the form', () => {
-		screen.debug();
+		expect(screen.getByPlaceholderText('Add A Title')).toBeInTheDocument();
+		expect(screen.getByPlaceholderText('Add Your Idea')).toBeInTheDocument();
+		expect(screen.getByRole('button', { name: 'Submit' })).toBeInTheDocument();
 	});
 });
