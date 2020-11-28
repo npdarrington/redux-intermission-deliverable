@@ -9,3 +9,30 @@ import '@testing-library/jest-dom';
 import Idea from './Idea';
 
 const store = createStore(rootReducer);
+
+describe('Idea', () => {
+	test('should render an idea to the screen', () => {
+		const mockIdea = {
+			id: 1,
+			idea: {
+				title: 'Test Title',
+				idea: 'Test Idea',
+			},
+			favorite: false,
+		};
+		render(
+			<Provider store={store}>
+				<Idea
+					ideaId={mockIdea.id}
+					idea={mockIdea.idea}
+					deleteIdea={jest.fn()}
+					favoriteIdea={jest.fn()}
+					favorited={mockIdea.favorite}
+				/>
+			</Provider>
+		);
+		expect(screen.getByText('Test Title')).toBeInTheDocument();
+		expect(screen.getByText('Test Idea')).toBeInTheDocument();
+		expect(screen.getByAltText('Favorite Idea')).toBeInTheDocument();
+	});
+});
