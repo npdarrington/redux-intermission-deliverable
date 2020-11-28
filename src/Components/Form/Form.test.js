@@ -10,11 +10,18 @@ import Form from './Form';
 
 const store = createStore(rootReducer);
 
+const mockProps = {
+	addIdea: jest.fn(() => ({
+		title: 'Test Title',
+		idea: 'Test Idea',
+	})),
+};
+
 describe('Form', () => {
 	beforeEach(() => {
 		render(
 			<Provider store={store}>
-				<Form />
+				<Form addIdea={mockProps} />
 			</Provider>
 		);
 	});
@@ -43,4 +50,14 @@ describe('Form', () => {
 			screen.getByText('A title and idea must be filled in')
 		).toBeInTheDocument();
 	});
+
+	// test('should allow an idea to be submitted', () => {
+	// 	const titleInput = screen.getByPlaceholderText('Add A Title');
+	// 	const ideaInput = screen.getByPlaceholderText('Add Your Idea');
+	// 	const submitBtn = screen.getByRole('button', { name: 'Submit' });
+	// 	userEvent.type(titleInput, 'Test Title');
+	// 	userEvent.type(ideaInput, 'Test Idea');
+	// 	userEvent.click(submitBtn);
+	// 	screen.debug();
+	// });
 });
