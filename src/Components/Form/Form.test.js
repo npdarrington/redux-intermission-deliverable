@@ -33,4 +33,14 @@ describe('Form', () => {
 		expect(titleInput.value).toBe('Test Title');
 		expect(ideaInput.value).toBe('Test Idea');
 	});
+
+	test('should show error if either title or idea input is empty on submit', () => {
+		const titleInput = screen.getByPlaceholderText('Add A Title');
+		const submitBtn = screen.getByRole('button', { name: 'Submit' });
+		userEvent.type(titleInput, 'Test Title');
+		userEvent.click(submitBtn);
+		expect(
+			screen.getByText('A title and idea must be filled in')
+		).toBeInTheDocument();
+	});
 });
