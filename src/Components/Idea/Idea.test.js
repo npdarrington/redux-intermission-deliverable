@@ -33,6 +33,28 @@ describe('Idea', () => {
 		);
 		expect(screen.getByText('Test Title')).toBeInTheDocument();
 		expect(screen.getByText('Test Idea')).toBeInTheDocument();
+	});
+
+	test('should render an unfavorited idea by default', () => {
+		const mockIdea = {
+			id: 1,
+			idea: {
+				title: 'Test Title',
+				idea: 'Test Idea',
+			},
+			favorite: false,
+		};
+		render(
+			<Provider store={store}>
+				<Idea
+					ideaId={mockIdea.id}
+					idea={mockIdea.idea}
+					deleteIdea={jest.fn()}
+					favoriteIdea={jest.fn()}
+					favorited={mockIdea.favorite}
+				/>
+			</Provider>
+		);
 		expect(screen.getByAltText('Favorite Idea')).toBeInTheDocument();
 	});
 });
