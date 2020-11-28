@@ -8,6 +8,7 @@ import './App.css';
 const App = () => {
 	return (
 		<main className='App'>
+			<h1>Redux Ideabox</h1>
 			<Form />
 			<IdeasContainer />
 		</main>
